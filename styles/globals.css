@@ -170,6 +170,99 @@ input:focus, textarea:focus {
   color: #fff;
 }
 
+/* BoardColumn and Kanban columns/classes */
+.no-board-selected {
+  color: var(--muted);
+  padding: 32px;
+}
+
+.column-title {
+  color: var(--muted);
+  font-size: 13px;
+  letter-spacing: 2px;
+  margin-bottom: 24px;
+  font-weight: 600;
+}
+
+.column-task-list {
+  margin-bottom: 16px;
+}
+
+.task-title {
+  flex: 1;
+}
+
+.task-edit-btn {
+  margin-right: 8px;
+  color: var(--muted);
+  font-size: 13px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 4px 10px;
+  border-radius: 4px;
+}
+.task-edit-btn:hover, .task-edit-btn:focus {
+  background: var(--accent-hover);
+  color: #fff;
+}
+
+.task-delete-btn {
+  color: var(--muted);
+  font-size: 13px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 4px 10px;
+  border-radius: 4px;
+}
+.task-delete-btn:hover, .task-delete-btn:focus {
+  background: var(--danger-bg);
+  color: var(--danger);
+}
+
+
+
+/* Modal fields (shared with BoardList) */
+.form-label {
+  display: block;
+  margin: 16px 0 8px 0;
+  font-weight: 600;
+  color: var(--text);
+}
+.form-select {
+  width: 100%;
+  margin-top: 6px;
+  padding: 10px 12px;
+  border-radius: 6px;
+  border: 1.5px solid var(--border);
+  background: var(--input-bg);
+  color: var(--text);
+  font-size: 15px;
+  font-family: inherit;
+  font-weight: 500;
+  outline: none;
+}
+.modal-title {
+  margin-bottom: 20px;
+}
+.modal-submit-btn {
+  width: 100%;
+  background: var(--accent);
+  color: #fff;
+  font-weight: 600;
+  font-size: 16px;
+  padding: 12px 0;
+  border-radius: 6px;
+  margin-top: 8px;
+  border: none;
+  cursor: pointer;
+  transition: background 0.15s;
+}
+.modal-submit-btn:hover, .modal-submit-btn:focus {
+  background: var(--accent-hover);
+}
+
 @media (max-width: 900px) {
   .main-content {
   }

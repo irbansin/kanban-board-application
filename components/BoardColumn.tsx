@@ -12,7 +12,7 @@ const BoardColumn = () => {
   } = useKanbanContext();
 
   const board = boards.find((b) => b.id === selectedBoardId);
-  if (!board) return <div style={{ color: 'var(--muted)', padding: 32 }}>No board selected.</div>;
+  if (!board) return <div className="no-board-selected">No board selected.</div>;
   const columnNames = board.columns.map(col => col.name);
 
   // Modal state for tasks
@@ -80,21 +80,22 @@ const BoardColumn = () => {
     <div className="kanban-columns">
       {board.columns.map((col) => (
         <div key={col.name} className="kanban-column">
-          <h4 style={{ color: 'var(--muted)', fontSize: 13, letterSpacing: 2, marginBottom: 24 }}>{col.name.toUpperCase()}</h4>
-          <ul style={{ marginBottom: 16 }}>
+          <h4 className="column-title">{col.name.toUpperCase()}</h4>
+          <ul className="column-task-list">
             {col.tasks.map((task) => (
               <li key={task.id} className="task-card">
-                <span style={{ flex: 1 }}>{task.title}</span>
-                <button onClick={() => openEdit(col.name, task)} style={{ marginRight: 8, color: 'var(--muted)', fontSize: 13 }}>Edit</button>
-                <button onClick={() => deleteTask(board.id, col.name, task.id)} style={{ color: 'var(--muted)', fontSize: 13 }}>✕</button>
+                <span className="task-title">{task.title}</span>
+                <button className="task-edit-btn" onClick={() => openEdit(col.name, task)}>Edit</button>
+                <button className="task-delete-btn" onClick={() => deleteTask(board.id, col.name, task.id)}>✕</button>
               </li>
             ))}
           </ul>
+
         </div>
       ))}
       <Modal open={modalOpen} onClose={closeModal}>
         <form onSubmit={handleSubmit}>
-          <h3 style={{ marginBottom: 20 }}>{editTask ? 'Edit Task' : 'Add Task'}</h3>
+          <h3 className="modal-title">{editTask ? 'Edit Task' : 'Add Task'}</h3>
           <FormField
             label="Task Title"
             value={title}
@@ -102,24 +103,12 @@ const BoardColumn = () => {
             error={error}
             placeholder="e.g. Design onboarding flow"
           />
-          <label style={{ display: 'block', margin: '16px 0 8px 0', fontWeight: 600, color: 'var(--text)' }}>
+          <label className="form-label">
             Task State
             <select
+              className="form-select"
               value={columnName}
               onChange={e => setColumnName(e.target.value)}
-              style={{
-                width: '100%',
-                marginTop: 6,
-                padding: '10px 12px',
-                borderRadius: 6,
-                border: '1.5px solid var(--border)',
-                background: 'var(--input-bg)',
-                color: 'var(--text)',
-                fontSize: 15,
-                fontFamily: 'inherit',
-                fontWeight: 500,
-                outline: 'none',
-              }}
             >
               {columnNames.map((col) => (
                 <option key={col} value={col}>{col}</option>
@@ -128,16 +117,7 @@ const BoardColumn = () => {
           </label>
           <button
             type="submit"
-            style={{
-              width: '100%',
-              background: 'var(--accent)',
-              color: '#fff',
-              fontWeight: 600,
-              fontSize: 16,
-              padding: '12px 0',
-              borderRadius: 6,
-              marginTop: 8,
-            }}
+            className="modal-submit-btn"
           >
             {editTask ? 'Save Changes' : 'Add Task'}
           </button>
