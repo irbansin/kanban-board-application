@@ -1,0 +1,163 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
+@import url('../styles/theme.css');
+
+body {
+  margin: 0;
+  font-family: 'Inter', sans-serif;
+  background: var(--primary-bg);
+  color: var(--text);
+  min-height: 100vh;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+h3, h4 {
+  margin: 0 0 16px 0;
+  font-weight: 600;
+}
+
+ul {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+button {
+  background: none;
+  border: none;
+  color: inherit;
+  font: inherit;
+  cursor: pointer;
+  border-radius: 6px;
+  transition: background 0.15s, color 0.15s, box-shadow 0.15s;
+}
+
+button:focus {
+  outline: 2px solid var(--accent-hover);
+}
+
+button:hover, .sidebar-board:hover {
+  background: var(--accent-hover);
+  color: #fff;
+}
+
+.sidebar {
+  background: var(--sidebar-bg);
+  width: 260px;
+  min-width: 220px;
+  padding: 32px 0 0 0;
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  border-right: 1px solid var(--border);
+  box-shadow: var(--shadow);
+}
+
+.sidebar-board {
+  display: flex;
+  align-items: center;
+  padding: 10px 24px;
+  margin-bottom: 4px;
+  border-radius: 6px;
+  font-weight: 500;
+  color: var(--sidebar-inactive-text);
+  background: none;
+  transition: background 0.15s, color 0.15s;
+}
+
+.sidebar-board.selected {
+  background: var(--sidebar-active-bg);
+  color: var(--sidebar-active-text);
+}
+
+.main-content {
+  flex: 1;
+  background: var(--primary-bg);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.kanban-columns {
+  display: flex;
+  gap: 32px;
+  margin-top: 32px;
+  overflow-x: auto;
+}
+
+.kanban-column {
+  background: var(--column-bg);
+  border-radius: 16px;
+  padding: 24px 16px;
+  min-width: 300px;
+  max-width: 340px;
+  box-shadow: var(--shadow);
+  display: flex;
+  flex-direction: column;
+}
+
+.task-card {
+  background: var(--card-bg);
+  margin-bottom: 12px;
+  border-radius: 10px;
+  padding: 16px 12px;
+  color: var(--text);
+  font-weight: 500;
+  box-shadow: 0 1px 4px rgba(99,95,199,0.08);
+  transition: background 0.15s, color 0.15s;
+  display: flex;
+  align-items: center;
+  border: 1px solid var(--border);
+}
+
+.task-card:hover {
+  background: var(--accent);
+  color: #fff;
+  box-shadow: 0 2px 12px var(--accent-hover);
+}
+
+input[type="text"], input[type="password"], textarea {
+  background: var(--input-bg);
+  color: var(--text);
+  border: 1.5px solid var(--border);
+  border-radius: 6px;
+  padding: 10px 12px;
+  font-size: 15px;
+  transition: border 0.15s, box-shadow 0.15s;
+}
+input:focus, textarea:focus {
+  border: 1.5px solid var(--input-focus);
+  box-shadow: 0 0 0 2px var(--accent-hover);
+  outline: none;
+}
+
+.modal {
+  background: var(--modal-bg);
+  border-radius: 16px;
+  box-shadow: var(--shadow);
+  padding: 32px;
+  min-width: 340px;
+  position: relative;
+}
+
+@media (max-width: 900px) {
+  .main-content {
+  }
+  .kanban-columns {
+    gap: 12px;
+  }
+  .kanban-column {
+    min-width: 220px;
+    padding: 12px 6px;
+  }
+}
+
+@media (max-width: 600px) {
+  .sidebar {
+    display: none;
+  }
+  .main-content {
+  }
+}
