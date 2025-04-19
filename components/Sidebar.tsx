@@ -64,7 +64,7 @@ const Sidebar = () => {
   };
 
   return (
-    <aside className="sidebar" style={{ display: 'flex', flexDirection: 'column', height: '100vh', justifyContent: 'space-between', background: 'var(--sidebar-bg)' }}>
+    <aside className="sidebar">
       <div>
         {/* Branding/Header */}
         <div style={{ display: 'flex', alignItems: 'center', gap: 10, padding: '0 24px', marginBottom: 32 }}>
@@ -84,24 +84,18 @@ const Sidebar = () => {
               >
                 <span style={{ marginRight: 12, fontWeight: 700, fontSize: 18, color: 'var(--muted)' }}>📋</span>
                 <span style={{ flex: 1, textAlign: 'left', whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis' }}>{board.name}</span>
+              <span onClick={() => deleteBoard(board.id)} style={{ color: 'var(--muted)', float: 'right', fontSize: 13, marginRight: 10 }}>✕</span>
               </button>
-              <button onClick={() => deleteBoard(board.id)} style={{ color: 'var(--muted)', float: 'right', fontSize: 13, marginRight: 10 }}>✕</button>
             </li>
           ))}
         </ul>
         <button
           style={{
-            marginLeft: 24,
-            color: '#fff',
-            background: 'var(--accent)',
+            color: '#514E85',
             fontWeight: 600,
             fontSize: 15,
             letterSpacing: 1,
-            borderRadius: 24,
-            padding: '10px 0',
             width: '85%',
-            marginBottom: 24,
-            boxShadow: '0 2px 8px rgba(99,95,199,0.08)',
           }}
           onClick={openCreate}
         >
@@ -134,28 +128,6 @@ const Sidebar = () => {
             </button>
           </form>
         </Modal>
-      </div>
-      {/* Theme Toggle */}
-      <div style={{ padding: 24, textAlign: 'center', borderTop: '1px solid var(--border)' }}>
-        <button
-          style={{
-            background: 'var(--primary-bg)',
-            color: 'var(--muted)',
-            borderRadius: 20,
-            padding: '6px 18px',
-            fontWeight: 600,
-            fontSize: 15,
-            border: 'none',
-            cursor: 'pointer',
-            display: 'flex',
-            alignItems: 'center',
-            gap: 8,
-            margin: '0 auto',
-          }}
-          // onClick={toggleTheme}
-        >
-          <span style={{ fontSize: 18 }}>🌙</span> <span style={{ fontSize: 18 }}>☀️</span>
-        </button>
       </div>
     </aside>
   );

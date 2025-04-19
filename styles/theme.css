@@ -1,10 +1,10 @@
 :root {
-  --primary-bg: #2b2c37; /* main background */
-  --secondary-bg: #20212c; /* sidebar, modal, column bg */
+  --primary-bg: #1F212C; /* main background */
+  --secondary-bg: #2C2C38; /* sidebar, modal, column bg */
   --column-bg: #23243c;
-  --card-bg: #2b2c37;
+  --card-bg: #2C2C38;
   --modal-bg: #2b2c37;
-  --sidebar-bg: #20212c;
+  --sidebar-bg: #2C2C38;
   --sidebar-active-bg: #635fc7;
   --sidebar-active-text: #fff;
   --sidebar-inactive-text: #828fa3;

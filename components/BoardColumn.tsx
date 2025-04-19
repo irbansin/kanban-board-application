@@ -90,18 +90,6 @@ const BoardColumn = () => {
               </li>
             ))}
           </ul>
-          <button
-            style={{
-              color: 'var(--accent)',
-              fontWeight: 600,
-              fontSize: 14,
-              marginTop: 8,
-              letterSpacing: 1,
-            }}
-            onClick={() => openCreate(col.name)}
-          >
-            + Add Task
-          </button>
         </div>
       ))}
       <Modal open={modalOpen} onClose={closeModal}>
