@@ -45,7 +45,7 @@ button:hover, .sidebar-board:hover {
 
 .sidebar {
   background: var(--sidebar-bg);
-  min-width: 220px;
+  min-width: 330px;
   padding: 16px 0 0 0;
   display: flex;
   flex-direction: column;
@@ -57,13 +57,14 @@ button:hover, .sidebar-board:hover {
 .sidebar-board {
   display: flex;
   align-items: center;
-  padding: 10px 24px;
+  padding: 10px 5px 10px 24px;
   margin-bottom: 4px;
-  border-radius: 6px;
+  border-radius: 0 20px 20px 0;
   font-weight: 500;
   color: var(--sidebar-inactive-text);
   background: none;
   transition: background 0.15s, color 0.15s;
+  width: 90%;
 }
 
 .sidebar-board.selected {

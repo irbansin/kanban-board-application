@@ -80,7 +80,6 @@ const Sidebar = () => {
                 className={`sidebar-board${board.id === selectedBoardId ? ' selected' : ''}`}
                 onClick={() => selectBoard(board.id)}
                 onDoubleClick={() => openEdit(board)}
-                style={{ display: 'flex', alignItems: 'center', width: '100%' }}
               >
                 <span style={{ marginRight: 12, fontWeight: 700, fontSize: 18, color: 'var(--muted)' }}>📋</span>
                 <span style={{ flex: 1, textAlign: 'left', whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis' }}>{board.name}</span>
