@@ -80,7 +80,7 @@ const BoardColumn = () => {
     <div className="kanban-columns">
       {board.columns.map((col) => (
         <div key={col.name} className="kanban-column">
-          <h4 className="column-title">{col.name.toUpperCase()}</h4>
+          <h4 className="column-title">{col.name.toUpperCase()} ({col.tasks.length})</h4>
           <ul className="column-task-list">
             {col.tasks.map((task) => (
               <li key={task.id} className="task-card">
